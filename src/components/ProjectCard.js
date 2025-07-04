@@ -8,6 +8,8 @@ export default function ProjectCard({
     tech = [],
     sourceUrl = "#",
 }) {
+    const isProd = process.env.NODE_ENV === 'production';
+    const prefix = isProd ? '/my-portfolio' : '';
     const imageUrl = image.startsWith('http') ? image : `${prefix}${image}`;
     return (
         <div className="bg-zinc-800 rounded-xl overflow-hidden shadow-lg border border-white/10">
