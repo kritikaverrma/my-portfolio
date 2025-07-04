@@ -1,3 +1,5 @@
+import Image from "next/image";
+import React from "react";
 export default function ProjectCard({
     title,
     status,
@@ -6,9 +8,10 @@ export default function ProjectCard({
     tech = [],
     sourceUrl = "#",
 }) {
+    const imageUrl = image.startsWith('http') ? image : `${prefix}${image}`;
     return (
         <div className="bg-zinc-800 rounded-xl overflow-hidden shadow-lg border border-white/10">
-            <img src={image} alt={title} className="w-full h-48 object-cover" />
+            <Image src={imageUrl} alt={title} className="w-full h-48 object-cover" />
             <div className="p-6">
                 <h3 className="text-xl font-semibold mb-1">{title}</h3>
                 {status && (
