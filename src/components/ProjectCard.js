@@ -12,8 +12,9 @@ export default function ProjectCard({
     const prefix = isProd ? '/my-portfolio' : '';
     const imageUrl = image.startsWith('http') ? image : `${prefix}${image}`;
     return (
-        <div className="bg-zinc-800 rounded-xl overflow-hidden shadow-lg border border-white/10">
-            <Image src={imageUrl} alt={title} className="w-full h-48 object-cover" />
+        <div className="bg-zinc-800 border border-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300" >
+            <Image src={imageUrl} alt={title} width={800} // specify an appropriate width
+                height={450} className="w-full h-48 object-cover" />
             <div className="p-6">
                 <h3 className="text-xl font-semibold mb-1">{title}</h3>
                 {status && (

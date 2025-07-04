@@ -6,17 +6,17 @@ import { motion } from "framer-motion";
 export default function EducationTimeline() {
     const education = [
         {
-            title: "Honours Computer Science (H. BSc)",
-            institution: "Ontario Tech University, Oshawa, ON",
+            title: "B.Tech in Computer Science Engineering",
+            institution: "JUIT, Waknaghat, Solan",
             points: ["Dean's Honours List – Fall 2024"],
-            date: "2022 – Present",
+            date: "2013 – 2017",
             logo: "/ontario-tech-logo.png",
         },
         {
-            title: "High School",
-            institution: "Richmond Hill High School, ON",
-            points: ["Ontario Scholar", "12th Grade: 96%"],
-            date: "2018 – 2022",
+            title: "Schooling",
+            institution: "DAV Public School, Bilaspur",
+            points: ["12th Grade: 90.6%"],
+            date: "2012 – 2013",
             logo: "/richmond-hill-logo.png",
         },
     ];
@@ -25,7 +25,7 @@ export default function EducationTimeline() {
         <section className="py-20 max-w-5xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-16 text-white">Education</h2>
 
-            <div className="relative border-l border-white/10 space-y-20 pl-8">
+            <div className="relative before:absolute before:left-[29px] md:before:left-1/2 before:top-0 before:h-full before:w-px before:bg-white/10">
                 {education.map((item, index) => {
                     const isRight = index % 2 === 0;
 
@@ -36,27 +36,24 @@ export default function EducationTimeline() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className={`relative flex flex-col md:flex-row items-start ${isRight ? "" : "md:flex-row-reverse"}`}
+                            className="relative flex flex-col md:grid md:grid-cols-9 md:items-center gap-6 mb-20"
                         >
                             {/* Timeline Dot */}
-                            <div className={`absolute -left-[30px] md:left-1/2 md:-translate-x-1/2 top-1 z-10`}>
+                            <div className="absolute left-[14px] md:left-1/2 transform -translate-x-1/2 top-1 z-10">
                                 <Avatar className="w-12 h-12 border border-white/20">
                                     <AvatarImage src={item.logo} alt={item.title} />
                                 </Avatar>
                             </div>
 
-                            {/* Date Label */}
-                            <span
-                                className={`absolute text-sm text-gray-400 top-2 ${isRight ? "left-full ml-6" : "right-full mr-6"} hidden md:block`}
-                            >
-                                {item.date}
-                            </span>
-
-                            {/* Spacer */}
-                            <div className="hidden md:block w-1/2"></div>
+                            {/* Left Spacer */}
+                            {isRight ? (
+                                <div className="hidden md:block md:col-span-4"></div>
+                            ) : (
+                                <div className="hidden md:block md:col-span-4 md:col-start-6"></div>
+                            )}
 
                             {/* Card */}
-                            <div className="w-full md:w-1/2">
+                            <div className={`md:col-span-4 ${isRight ? "md:col-start-6" : ""}`}>
                                 <Card className="bg-zinc-800 text-white border border-white/10">
                                     <CardContent className="p-6 space-y-2">
                                         <h3 className="text-lg font-semibold">{item.title}</h3>
@@ -69,6 +66,16 @@ export default function EducationTimeline() {
                                     </CardContent>
                                 </Card>
                             </div>
+
+                            {/* Date Label */}
+                            <span
+                                className={`absolute text-sm text-gray-400 top-2 hidden md:block ${isRight
+                                        ? "left-[calc(50%+3.5rem)]"
+                                        : "right-[calc(50%+3.5rem)]"
+                                    }`}
+                            >
+                                {item.date}
+                            </span>
                         </motion.div>
                     );
                 })}

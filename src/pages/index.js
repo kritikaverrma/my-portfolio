@@ -23,10 +23,16 @@ export default function Home() {
       <section id="about" className="py-20 px-6 max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-gray-300">
-          I’m a full-stack developer focused on building secure and scalable applications. I love simulating real-world financial workflows and crafting dev tools.
+          I’m a full-stack developer focused on building secure and scalable applications.
+          I love simulating real-world workflows and crafting dev tools.
+          I'm a super introvert nurtured in a small state Haryana, India,
+          passionate about building impactful products that leverage technology to make a difference.
+          I often share my work to contribute to the community.
+          In addition to my development work, I'm always exploring new ideas, particularly in areas like machine learning.
         </p>
-        <EducationTimeline />
       </section>
+
+
 
       {/* Projects */}
       <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
@@ -62,6 +68,15 @@ export default function Home() {
             <ProjectCard key={i} {...project} />
           ))}
         </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-20 px-6 max-w-2xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">About Me</h2>
+        <p className="text-gray-300">
+          I’m a full-stack developer focused on building secure and scalable applications. I love simulating real-world financial workflows and crafting dev tools.
+        </p>
+        <EducationTimeline />
       </section>
 
       {/* Contact */}

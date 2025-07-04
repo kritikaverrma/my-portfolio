@@ -2,17 +2,17 @@ import Image from "next/image";
 export const myWorks = [
 
     {
-        title: "MoneyPay - Paytm Clone",
+        title: "MoneyPay - Simulated UPI Wallet",
         status: "Live",
         description:
             "A digital wallet simulation that mimics UPI flow with double-entry accounting and a dashboard.",
-        image: "/moneypay-preview.jpg",
+        image: "/wallet.png",
         tech: ["Next.js", "Prisma", "Supabase", "Tailwind", "Webhooks"],
         sourceUrl: "https://github.com/kritikaverrma/MoneyPay",
     },
     {
         title: "ChitChat - a real-time messaging application",
-        status: "Client Work",
+        status: "Live",
         description:
             "Leverages Socket.IO for real-time messaging. It supports both individual and group chat functionalities with full user authentication and profile management.",
         image: "/chatt.png",
@@ -29,11 +29,11 @@ export const myWorks = [
         sourceUrl: "https://github.com/kritikaverrma/MeetBot",
     },
     {
-        title: "MoneyPay - Simulated UPI Wallet",
+        title: "Tweak - A social media application",
         status: "Live",
         description:
             "A digital wallet simulation that mimics UPI flow with double-entry accounting, QR payments, and a dashboard.",
-        image: "/moneypay-preview.jpg",
+        image: "/coder.jpeg",
         tech: ["Next.js", "Prisma", "Supabase", "Tailwind", "Webhooks"],
         sourceUrl: "https://github.com/kritikaverrma/MoneyPay",
     },
@@ -43,6 +43,15 @@ export const myWorks = [
         description:
             "A virtual simulation of Ubuntu 20.04 operating system on web made using NEXT.js and tailwind CSS",
         image: "/Ubuntu.jpeg",
+        tech: ["Next.js", "Typescript", "tailwind CSS"],
+        sourceUrl: "https://github.com/kritikaverrma/UbuntuSimulation",
+    },
+    {
+        title: "Cinematic- A video streaming application",
+        status: "Live",
+        description:
+            "A virtual simulation of Ubuntu 20.04 operating system on web made using NEXT.js and tailwind CSS",
+        image: "/streaming.png",
         tech: ["Next.js", "Typescript", "tailwind CSS"],
         sourceUrl: "https://github.com/kritikaverrma/UbuntuSimulation",
     },
